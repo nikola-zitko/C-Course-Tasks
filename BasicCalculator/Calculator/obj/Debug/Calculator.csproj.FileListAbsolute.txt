@@ -1,0 +1,14 @@
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Nick\Documents\emovis\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\Nick\Documents\C# Course Tasks\BasicCalculator\Calculator\obj\Debug\Calculator.pdb
