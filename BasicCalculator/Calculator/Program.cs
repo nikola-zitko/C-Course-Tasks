@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Calculator{
     class Program{
         static void Main(string[] args) {
-            bool opFlag = false, op1Flag = false, op2Flag = false, exit = false ;
+            bool opFlag, op1Flag, op2Flag, exit = false ;
             string input;
-            int option = 0;
+            int option;
             double a = 0, b = 0;
             string op, exit_;
             PrintProgramVersion();
@@ -104,8 +104,9 @@ namespace Calculator{
             string appAuthor = "Nikola Žitko";
             string appVersion = "1.1";
             string appName = "Calculator";
-            
-            Console.ForegroundColor = ConsoleColor.Gray;
+
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("{0}: Version {1} made by {2}", appName, appVersion, appAuthor);
             Console.ResetColor();
         }
@@ -119,9 +120,15 @@ namespace Calculator{
         static void PrintMenu() {
             Console.WriteLine("----------------------");
             Console.WriteLine("Calculator");
-            Console.WriteLine("Menu:");
-            Console.WriteLine("1. Calculate");
+            Console.WriteLine("Menu:\n");
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("1. Calculate\n\n");
+            Console.ResetColor();
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("2. Exit");
+            Console.ResetColor();
             Console.WriteLine("----------------------");
         }
 
