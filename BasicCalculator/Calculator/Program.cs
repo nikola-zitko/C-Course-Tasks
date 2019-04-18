@@ -4,78 +4,126 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            bool menu = true;
+namespace Calculator{
+    class Program{
+        static void Main(string[] args) {
+            bool opFlag = false, op1Flag = false, op2Flag = false, exit = false ;
             string input;
-            double a, b;
-            string op;
-            do
-            {
-                do
-                {
-                    Console.WriteLine("a. Kalkulator\nb. Izlaz\n");
+            int option = 0;
+            double a = 0, b = 0;
+            string op, exit_;
+            PrintProgramVersion();
+            do {
+                do {
+                    PrintMenu();
                     input = Console.ReadLine();
-                    if(input!= "a" && input != "b")
-                    {
-                        Console.WriteLine("Izaberite ili a ili b.");
+                    if (!int.TryParse(input, out option)) {
+                        PrintColoredMessage(ConsoleColor.Red, "Odaberite opciju pod 1. ili pod 2.");
                     }
-                    else if(input == "b")
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                } while (input != "a");
+                    else {
+                        if (option == 2) {
+                            return;
+                        }
+                        else {
+                            continue;
+                        }
 
-                if(input == "a") {
+                    }
+
+                } while (option != 1);
+
+                do {
                     Console.WriteLine("Unesi prvi operand: ");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    if (double.IsNaN(a)) {
-                        Console.WriteLine("Nije unesen broj!");
-                        break;
+                    string prvi = Console.ReadLine();
+                    op1Flag = false;
+                    if (!double.TryParse(prvi, out double optionPrvi)) {
+                        PrintColoredMessage(ConsoleColor.Red, "Unesite ispravan broj!");
                     }
+                    else {
+                        a = optionPrvi;
+                        op1Flag = true;
+                    }
+                }
+                while (op1Flag == false);
+                do {
                     Console.WriteLine("Unesi drugi operand: ");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    if (double.IsNaN(b)) {
-                        Console.WriteLine("Nije unesen broj!");
-                        break;
+                    string drugi = Console.ReadLine();
+                    op2Flag = false;
+                    if (!double.TryParse(drugi, out double optionDrugi)) {
+                        PrintColoredMessage(ConsoleColor.Red, "Unesite ispravan broj!");
                     }
+                    else {
+                        b = optionDrugi;
+                        op2Flag = true;
+                    }
+                }
+                while (op2Flag == false);
+                do {
                     Console.WriteLine("Unesi operator('+'(sum), '-'(sub), '*'(mul), '/'(div): ");
                     op = Console.ReadLine();
+                    opFlag = false;
 
                     if (op == "+" || op == "sum") {
                         Console.WriteLine("Suma je: {0}", a + b);
-
+                        opFlag = true;
                     }
                     else if (op == "-" || op == "sub") {
                         Console.WriteLine("Razlike je: {0}", a - b);
+                        opFlag = true;
                     }
                     else if (op == "*" || op == "mul") {
                         Console.WriteLine("Umnozak je: {0}", a * b);
+                        opFlag = true;
                     }
                     else if (op == "/" || op == "div") {
                         Console.WriteLine("Kvocijent je: {0}", a / b);
+                        opFlag = true;
                     }
                     else {
-                        Console.WriteLine("Neispravan operator!");
-                        break;
+                        PrintColoredMessage(ConsoleColor.Red, "Neispravan operator!");
                     }
                 }
-                else {
-                    menu = false;
+                while (opFlag == false);
+                do {
+                    Console.WriteLine("Izlaz? [Y/N]");
+                    exit_ = Console.ReadLine();
+                    if (exit_ == "Y" || exit_ == "y") {
+                        exit = true;
+                    }
+                    else if(exit_ == "N" || exit_ == "n"){
+                        Console.Clear();
+                    }
                 }
-                
+                while (exit_ != "Y" && exit_ != "N" && exit_ != "y" && exit_ != "n");
             }
-            while (menu == true);
-            Console.WriteLine("Kraj programa!");
-            Console.ReadLine();
+            while (exit == false);
+                Console.WriteLine();
         }
+
+        static void PrintProgramVersion() {
+            string appAuthor = "Nikola Žitko";
+            string appVersion = "1.1";
+            string appName = "Calculator";
+            
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("{0}: Version {1} made by {2}", appName, appVersion, appAuthor);
+            Console.ResetColor();
+        }
+
+        static void PrintColoredMessage(ConsoleColor Color, string Message) {
+            Console.ForegroundColor = Color;
+            Console.WriteLine(Message);
+            Console.ResetColor();
+        }
+
+        static void PrintMenu() {
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Calculator");
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Calculate");
+            Console.WriteLine("2. Exit");
+            Console.WriteLine("----------------------");
+        }
+
     }
 }
